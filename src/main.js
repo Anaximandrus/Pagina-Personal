@@ -1,11 +1,25 @@
-document.addEventListener("DOMContentLoaded", function () {
+"use strict";
+document.addEventListener("DOMContentLoaded", () => {
     document.body.classList.add('dark');
-    var btn = document.getElementById('toggle-theme');
+    const btn = document.getElementById('toggle-theme');
     if (btn) {
-        btn.addEventListener('click', function () {
+        btn.addEventListener('click', () => {
             document.body.classList.toggle('dark');
-            var isDark = document.body.classList.contains("dark");
+            const isDark = document.body.classList.contains("dark");
             btn.textContent = isDark ? '☀️ Modo claro' : '🌓 Modo oscuro';
+        });
+    }
+});
+window.addEventListener('DOMContentLoaded', () => {
+    const downloadCVButton = document.getElementById('download-cv');
+    if (downloadCVButton) {
+        downloadCVButton.addEventListener('click', () => {
+            const link = document.createElement('a');
+            link.href = 'assets/cv.pdf'; // Ruta del archivo PDF
+            link.download = 'DiegoEsparza_CV.pdf'; // Nombre con el que se descargará
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
         });
     }
 });

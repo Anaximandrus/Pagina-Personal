@@ -12,4 +12,20 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     }
   });
+
+window.addEventListener('DOMContentLoaded', () => {
+  const downloadCVButton = document.getElementById('download-cv');
+
+  if (downloadCVButton) {
+    downloadCVButton.addEventListener('click', () => {
+      const link = document.createElement('a');
+      link.href = 'assets/cv.pdf'; // Ruta del archivo PDF
+      link.download = 'DiegoEsparza_CV.pdf'; // Nombre con el que se descargará
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    });
+  }
+});
+
   
