@@ -24,7 +24,7 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 });
 window.addEventListener('DOMContentLoaded', () => {
-    const downloadCVButton = document.getElementById('descargarLlave()');
+    const downloadCVButton = document.getElementById('descargarLlave');
     if (downloadCVButton) {
         downloadCVButton.addEventListener('click', () => {
             const link = document.createElement('a');
