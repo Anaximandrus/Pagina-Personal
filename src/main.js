@@ -23,3 +23,16 @@ window.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+window.addEventListener('DOMContentLoaded', () => {
+    const downloadCVButton = document.getElementById('descargarLlave()');
+    if (downloadCVButton) {
+        downloadCVButton.addEventListener('click', () => {
+            const link = document.createElement('a');
+            link.href = 'assets/pub.pem';
+            link.download = 'DiegoEsparza_PublicKey.pem';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        });
+    }
+});
